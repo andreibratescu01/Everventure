@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>package01</OriginalElement>
+  <nodes>
+    <node x="230.75000000000003" y="279.0">package01.Player</node>
+    <node x="143.75000000000003" y="184.0">package01.UI</node>
+    <node x="131.25000000000003" y="81.0">package01.Game</node>
+    <node x="15.750000000000028" y="279.0">package01.VisibilityManager</node>
+    <node x="163.3497023809525" y="362.0">package01.Story</node>
+    <node x="81.75000000000003" y="0.0">package01.DatabaseConnection</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="176.0" y="196.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
