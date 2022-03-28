@@ -12,11 +12,9 @@ public class UI{
 	JFrame window;
 	JPanel titleNamePanel, startButtonPanel, mainTextPanel, choiceButtonPanel, playerPanel, healthBarPanel, loginPanel, registerPanel,loginButtonPanel,
 			loginButtonPanel1,loginMessagePanel, registerMessagePanel, imagePanel, savequitPanel;
-	JLabel titleNameLabel, weaponLabel, username1Label, username2Label, password1Label, password2Label, password3Label, weaponNameLabel, imageLabel;
-	JButton startButton, choice1, choice2, choice3, choice4, loginButton, loginButton1, registerButton, registerButton1, save, quit;
-	JTextArea mainTextArea, loginMessage, registerMessage;
-	JTextField username1,username2;
-	JPasswordField password1, password2, password3;
+	JLabel titleNameLabel, weaponLabel,weaponNameLabel, imageLabel;
+	JButton startButton, choice1, choice2, choice3, choice4;
+	JTextArea mainTextArea;
 	JProgressBar healthBar;
 	ImageIcon image;
 	Font titleFont = new Font("Times New Roman", Font.PLAIN, 90 );
@@ -59,178 +57,6 @@ public class UI{
 
 		window.add(titleNamePanel);
 		window.add(startButtonPanel);
-
-		//Login Screen
-
-		loginPanel = new JPanel();
-		loginPanel.setBounds(160,224,768,192);
-		loginPanel.setBackground(Color.black);
-		loginPanel.setLayout(new GridLayout(2,2));
-
-
-		username1Label = new JLabel("Username: ");
-		username1Label.setFont(normalFont);
-		username1Label.setBackground(Color.black);
-		username1Label.setForeground(Color.white);
-		loginPanel.add(username1Label);
-
-		username1 = new JTextField(1);
-		username1.setText("");
-		username1.setFont(normalFont);
-		username1.setBackground(Color.black);
-		username1.setForeground(Color.white);
-		loginPanel.add(username1);
-
-		password1Label = new JLabel("Password: ");
-		password1Label.setFont(normalFont);
-		password1Label.setBackground(Color.black);
-		password1Label.setForeground(Color.white);
-		loginPanel.add(password1Label);
-
-		password1 = new JPasswordField();
-		password1.setText("");
-		password1.setFont(normalFont);
-		password1.setBackground(Color.black);
-		password1.setForeground(Color.white);
-		loginPanel.add(password1);
-
-		loginButtonPanel = new JPanel();
-		loginButtonPanel.setBounds(320,448,384,192);
-		loginButtonPanel.setBackground(Color.black);
-		loginButtonPanel.setLayout(new GridLayout(2,1));
-
-
-		loginButton = new JButton("Login");
-		loginButton.setBackground(Color.black);
-		loginButton.setForeground(Color.white);
-		loginButton.setFont(normalFont);
-		loginButton.setFocusPainted(false);
-		loginButton.addActionListener(cHandler);
-		loginButton.setActionCommand("login");
-		loginButtonPanel.add(loginButton);
-
-		registerButton = new JButton("Register");
-		registerButton.setBackground(Color.black);
-		registerButton.setForeground(Color.white);
-		registerButton.setFont(normalFont);
-		registerButton.setFocusPainted(false);
-		registerButton.addActionListener(cHandler);
-		registerButton.setActionCommand("register");
-		loginButtonPanel.add(registerButton);
-
-		loginMessage = new JTextArea();
-		loginMessage.setText("");
-		loginMessage.setBounds(128,128,768,320);
-		loginMessage.setBackground(Color.black);
-		loginMessage.setForeground(Color.white);
-		loginMessage.setFont(normalFont);
-		loginMessage.setLineWrap(true);
-		loginMessage.setWrapStyleWord(true);
-		loginMessage.setEditable(false);
-
-		loginMessagePanel = new JPanel();
-		loginMessagePanel.setBounds(64,128,768,64);
-		loginMessagePanel.setBackground(Color.black);
-		loginMessagePanel.add(loginMessage);
-
-
-
-		window.add(loginMessagePanel);
-
-		window.add(loginPanel);
-		window.add(loginButtonPanel);
-
-
-		//Register Screen
-
-		registerPanel = new JPanel();
-		registerPanel.setBounds(160,224,768,192);
-		registerPanel.setBackground(Color.black);
-		registerPanel.setLayout(new GridLayout(3,2));
-		window.add(registerPanel);
-
-		username2Label = new JLabel("Username: ");
-		username2Label.setFont(normalFont);
-		username2Label.setBackground(Color.black);
-		username2Label.setForeground(Color.white);
-		registerPanel.add(username2Label);
-
-		username2 = new JTextField(1);
-		username2.setText("");
-		username2.setFont(normalFont);
-		username2.setBackground(Color.black);
-		username2.setForeground(Color.white);
-		registerPanel.add(username2);
-
-		password2Label = new JLabel("Password: ");
-		password2Label.setFont(normalFont);
-		password2Label.setBackground(Color.black);
-		password2Label.setForeground(Color.white);
-		registerPanel.add(password2Label);
-
-		password2 = new JPasswordField();
-		password2.setText("");
-		password2.setFont(normalFont);
-		password2.setBackground(Color.black);
-		password2.setForeground(Color.white);
-		registerPanel.add(password2);
-
-		password3Label = new JLabel("Confirm Password: ");
-		password3Label.setFont(normalFont);
-		password3Label.setBackground(Color.black);
-		password3Label.setForeground(Color.white);
-		registerPanel.add(password3Label);
-
-		password3 = new JPasswordField();
-		password3.setText("");
-		password3.setFont(normalFont);
-		password3.setBackground(Color.black);
-		password3.setForeground(Color.white);
-		registerPanel.add(password3);
-
-		loginButtonPanel1 = new JPanel();
-		loginButtonPanel1.setBounds(320,448,384,192);
-		loginButtonPanel1.setBackground(Color.black);
-		loginButtonPanel1.setLayout(new GridLayout(2,1));
-
-
-		loginButton1 = new JButton("Login");
-		loginButton1.setBackground(Color.black);
-		loginButton1.setForeground(Color.white);
-		loginButton1.setFont(normalFont);
-		loginButton1.setFocusPainted(false);
-		loginButton1.addActionListener(cHandler);
-		loginButton1.setActionCommand("start");
-		loginButtonPanel1.add(loginButton1);
-
-		registerButton1 = new JButton("Register");
-		registerButton1.setBackground(Color.black);
-		registerButton1.setForeground(Color.white);
-		registerButton1.setFont(normalFont);
-		registerButton1.setFocusPainted(false);
-		registerButton1.addActionListener(cHandler);
-		registerButton1.setActionCommand("register1");
-		loginButtonPanel1.add(registerButton1);
-
-		registerMessage = new JTextArea();
-		registerMessage.setText("");
-		registerMessage.setBounds(128,128,768,320);
-		registerMessage.setBackground(Color.black);
-		registerMessage.setForeground(Color.white);
-		registerMessage.setFont(normalFont);
-		registerMessage.setLineWrap(true);
-		registerMessage.setWrapStyleWord(true);
-		registerMessage.setEditable(false);
-
-		registerMessagePanel = new JPanel();
-		registerMessagePanel.setBounds(64,128,768,64);
-		registerMessagePanel.setBackground(Color.black);
-		registerMessagePanel.add(registerMessage);
-
-		window.add(registerMessagePanel);
-		window.add(loginButtonPanel1);
-
-
 		//Game screen
 
 		mainTextPanel = new JPanel();
@@ -320,30 +146,6 @@ public class UI{
 
 		window.add(imagePanel);
 
-		savequitPanel = new JPanel();
-		savequitPanel.setBounds(640,324,320,48);
-		savequitPanel.setBackground(Color.black);
-		savequitPanel.setLayout(new GridLayout(1,2));
-		window.add(savequitPanel);
-
-		save = new JButton("Save");
-		save.setBackground(Color.black);
-		save.setForeground(Color.white);
-		save.setFont(normalFont);
-		save.setFocusPainted(false);
-		save.addActionListener(cHandler);
-		save.setActionCommand("save");
-		savequitPanel.add(save);
-
-		quit = new JButton("Quit");
-		quit.setBackground(Color.black);
-		quit.setForeground(Color.white);
-		quit.setFont(normalFont);
-		quit.setFocusPainted(false);
-		quit.addActionListener(cHandler);
-		quit.setActionCommand("quit");
-		savequitPanel.add(quit);
-
 		weaponLabel = new JLabel("Weapon: ");
 		weaponLabel.setFont(normalFont);
 		weaponLabel.setForeground(Color.white);
@@ -353,8 +155,6 @@ public class UI{
 		weaponNameLabel.setFont(normalFont);
 		weaponNameLabel.setForeground(Color.white);
 		playerPanel.add(weaponNameLabel);
-
-
 
 		window.setVisible(true);
 	}

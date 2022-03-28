@@ -11,7 +11,6 @@ public class Story {
     VisibilityManager vm;
     Player player = new Player();
     Monster monster;
-    String state;
 
     int silverRing;
 
@@ -58,8 +57,6 @@ public class Story {
         ui.image = new ImageIcon(".//img//towngate4.jpg");
         ui.imageLabel.setIcon(ui.image);
 
-        state = "townGate";
-
         ui.choiceButtonPanel.setVisible(false);
 
         ui.text = "You are approaching the entrance of a town.\n Suddenly, you meet a guard. \n\nWhat do you do?";
@@ -68,7 +65,6 @@ public class Story {
         ui.choice2.setText("Attack this guard");
         ui.choice3.setText("Leave");
         ui.choice4.setText("");
-
 
         game.nextPosition1 = "talkGuard";
         game.nextPosition2 = "attackGuard";
@@ -82,8 +78,6 @@ public class Story {
 
         ui.image = new ImageIcon(".//img//towngate4.jpg");
         ui.imageLabel.setIcon(ui.image);
-
-        state = "townGate_2";
 
         ui.choiceButtonPanel.setVisible(false);
 
@@ -103,8 +97,6 @@ public class Story {
     public void talkGuard() {
         ui.image = new ImageIcon(".//img//townguard2.jpg");
         ui.imageLabel.setIcon(ui.image);
-
-        state = "talkGuard";
 
         if(silverRing==0)
         {
@@ -131,7 +123,6 @@ public class Story {
     public void attackGuard() {
         ui.image = new ImageIcon(".//img//townguard2.jpg");
         ui.imageLabel.setIcon(ui.image);
-        state = "attackGuard";
         ui.choiceButtonPanel.setVisible(false);
         ui.text = "Guard: \n You really want to do this? \n\nThe guard attacked you. \nYou receive 4 damage";
         ui.prepareText();
@@ -153,7 +144,6 @@ public class Story {
     public void crossRoad() {
         ui.image = new ImageIcon(".//img//crossroad.jpg");
         ui.imageLabel.setIcon(ui.image);
-        state = "crossRoad";
         if(silverRing == 0) {
             ui.choiceButtonPanel.setVisible(false);
             ui.text = "You are at a crossroad.\n Go west and you will be back to the town.";
@@ -190,7 +180,6 @@ public class Story {
     public void north() {
         ui.image = new ImageIcon(".//img//river.jpg");
         ui.imageLabel.setIcon(ui.image);
-        state = "north";
         ui.choiceButtonPanel.setVisible(false);
         ui.text = "You find a river and you drink the water from it. In addition, you rest at the riverside.\n\n(Your HP recovered by 2)";
         ui.prepareText();
@@ -202,6 +191,7 @@ public class Story {
         ui.choice3.setText("");
         ui.choice4.setText("");
 
+
         game.nextPosition1 = "crossRoad";
         game.nextPosition2 = "";
         game.nextPosition3 = "";
@@ -212,7 +202,6 @@ public class Story {
     public void east() {
         ui.image = new ImageIcon(".//img//longsword.jpg");
         ui.imageLabel.setIcon(ui.image);
-        state = "east";
 
         if(player.currrentWeapon.name.equals("Knife"))
         {
@@ -241,7 +230,6 @@ public class Story {
     }
 
     public void south() {
-        state = "south";
         int k = 0;
         char ch;
         char[] vowels = {'A','E','I','O','U'};
@@ -402,8 +390,6 @@ public class Story {
         ui.image = new ImageIcon(".//img//silverring.jpg");
         ui.imageLabel.setIcon(ui.image);
 
-        state = "win";
-
             ui.choiceButtonPanel.setVisible(false);
             if(silverRing == 0)
                 ui.text = "You have defeated the " + monster.name + " and you obtained a ring! \n\n ( You obtained a Silver Ring! ) ";
@@ -450,10 +436,10 @@ public class Story {
         ui.text = "Guard: Wow, what is this? A silver ring?\n I thought there were no silver rings left in our lands!\nI am honored to welcome you to our town."+
                 "\n\n<LAAT>.";
         ui.prepareText();
-        ui.choice1.setVisible(false);
-        ui.choice2.setVisible(false);
-        ui.choice3.setVisible(false);
-        ui.choice4.setVisible(false);
+        ui.choice1.setText("E");
+        ui.choice2.setText("N");
+        ui.choice3.setText("D");
+        ui.choice4.setText("!");
     }
 
     public void toTitle() {
